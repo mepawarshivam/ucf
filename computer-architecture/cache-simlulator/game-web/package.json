@@ -1,0 +1,11 @@
+{
+  "name": "cache-keepers-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "check": "node --check app.js && node --check sim-core.js",
+    "test": "node tests/sim-core.test.js"
+  }
+}

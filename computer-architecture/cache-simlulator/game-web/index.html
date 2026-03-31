@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cache Keepers Web</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Cache Keepers</h1>
+      <p>Learn cache simulator behavior by playing each memory request step-by-step.</p>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>Configuration</h2>
+        <div class="form-grid">
+          <label>Block Size <input id="blockSize" type="number" min="1" value="4" /></label>
+          <label>L1 Size <input id="l1Size" type="number" min="0" value="16" /></label>
+          <label>L1 Assoc <input id="l1Assoc" type="number" min="1" value="2" /></label>
+          <label>L2 Size <input id="l2Size" type="number" min="0" value="0" /></label>
+          <label>L2 Assoc <input id="l2Assoc" type="number" min="1" value="2" /></label>
+          <label>Replacement
+            <select id="replacement">
+              <option value="0">LRU</option>
+              <option value="1">FIFO</option>
+            </select>
+          </label>
+          <label>Inclusion
+            <select id="inclusion">
+              <option value="0">Non-inclusive</option>
+              <option value="1">Inclusive</option>
+            </select>
+          </label>
+        </div>
+        <div class="actions">
+          <button id="loadStarter">Load Starter Trace</button>
+          <button id="resetGame">Reset Game</button>
+          <button id="stepBtn">Step</button>
+          <button id="runBtn">Run All</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Trace</h2>
+        <textarea id="traceInput" rows="8" spellcheck="false" placeholder="r 0x00000000\nw 0x00000004"></textarea>
+        <p class="hint">Format: one request per line, e.g. <code>r 0x00000000</code></p>
+      </section>
+
+      <section class="panel">
+        <h2>Current Turn</h2>
+        <div id="turnInfo" class="turn-info">No moves yet.</div>
+      </section>
+
+      <section class="panel two-col">
+        <div>
+          <h2>L1 Cache</h2>
+          <div id="l1Table"></div>
+        </div>
+        <div>
+          <h2>L2 Cache</h2>
+          <div id="l2Table"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Scoreboard</h2>
+        <div id="scoreboard"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Event Log</h2>
+        <ol id="eventLog"></ol>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
