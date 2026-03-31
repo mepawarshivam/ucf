@@ -54,3 +54,25 @@ The test asserts expected metrics for the starter trace with:
 3. Step one request at a time and discuss set/tag mapping.
 4. Compare final counters and miss rate.
 5. Enable `L2` and replay to show traffic changes.
+
+## Deploy on GitHub Pages
+
+A workflow is already included at:
+
+- `.github/workflows/deploy-game-web-pages.yml`
+
+One-time setup on GitHub:
+
+1. Push your latest `main` branch.
+2. Open your repo on GitHub → **Settings** → **Pages**.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+4. Go to **Actions** tab and run (or wait for) **Deploy Cache Keepers to GitHub Pages**.
+
+Your site URL will be:
+
+- `https://mepawarshivam.github.io/ucf/`
+
+Notes:
+
+- The workflow publishes the folder `computer-architecture/cache-simlulator/game-web`.
+- Any push that changes files in that folder auto-triggers a redeploy.
